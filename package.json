@@ -1,19 +1,19 @@
 {
-	"name": "passkit-generator",
-	"version": "3.1.9",
+	"name": "@alexartisan/passkit-generator",
+	"version": "3.1.10",
 	"description": "The easiest way to generate custom Apple Wallet passes in Node.js",
 	"main": "lib/index.js",
 	"scripts": {
 		"build": "npm run build:src",
 		"build:all": "npm run build:src && npm run build:examples",
-		"build:src": "rimraf lib && npx tsc -p tsconfig.dist.json",
+		"build:src": "rm -rf lib && npx tsc -p tsconfig.dist.json",
 		"prepublishOnly": "npm run build && npm run test",
 		"test": "NODE_OPTIONS=\"--experimental-vm-modules --no-warnings\" jest -c jest.config.cjs --silent"
 	},
 	"author": "Alexander Patrick Cerutti",
 	"license": "MIT",
-	"repository": "https://github.com/alexandercerutti/passkit-generator",
-	"bugs": "https://github.com/alexandercerutti/passkit-generator/issues",
+	"repository": "https://github.com/AlexArtisan/passkit-generator",
+	"bugs": "https://github.com/AlexArtisan/passkit-generator/issues",
 	"keywords": [
 		"Apple",
 		"Passkit",
@@ -36,7 +36,6 @@
 		"jest": "^29.5.0",
 		"jest-environment-node": "^29.5.0",
 		"prettier": "^2.5.1",
-		"rimraf": "^3.0.2",
 		"typescript": "^5.0.4"
 	},
 	"files": [

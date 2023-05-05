@@ -21,9 +21,6 @@ import { CertificatesSchema } from "./Certificates";
 
 import * as Messages from "../messages";
 
-const RGB_COLOR_REGEX =
-	/rgb\(\s*(?:[01]?[0-9][0-9]?|2[0-4][0-9]|25[0-5])\s*,\s*(?:[01]?[0-9][0-9]?|2[0-4][0-9]|25[0-5])\s*,\s*(?:[01]?[0-9][0-9]?|2[0-4][0-9]|25[0-5])\s*\)/;
-
 export interface FileBuffers {
 	[key: string]: Buffer;
 }
@@ -136,9 +133,9 @@ export const OverridablePassProps = Joi.object<OverridablePassProps>({
 	suppressStripShine: Joi.boolean(),
 	maxDistance: Joi.number().positive(),
 	authenticationToken: Joi.string().min(16),
-	labelColor: Joi.string().regex(RGB_COLOR_REGEX),
-	backgroundColor: Joi.string().regex(RGB_COLOR_REGEX),
-	foregroundColor: Joi.string().regex(RGB_COLOR_REGEX),
+	labelColor: Joi.string(),
+	backgroundColor: Joi.string(),
+	foregroundColor: Joi.string(),
 	associatedStoreIdentifiers: Joi.array().items(Joi.number()),
 	userInfo: Joi.alternatives(Joi.object().unknown(), Joi.array()),
 	// parsing url as set of words and nums followed by dots, optional port and any possible path after
